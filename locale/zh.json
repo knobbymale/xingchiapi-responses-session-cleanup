@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "xingchiapi Responses 会话清理",
+    "description": "启用后，仅在发往 xingchiapi OpenAI Responses 接口的最终 POST 请求中删除客户端带来的 session-id、x-session-id 请求头和 prompt_cache_key。保留 session_id、认证信息、上游地址、流式响应、工具字段及其他供应商行为。可在 DSH 插件列表中启用或禁用此插件。"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "xingchiapi Responses session cleanup",
+    "description": "When enabled, removes client-provided session-id and x-session-id headers and prompt_cache_key from final POST requests to xingchiapi's OpenAI Responses endpoint. It preserves session_id, authentication, URLs, response streaming, tool fields, and all other providers. Toggle this plugin in DSH Plugins to enable or disable cleanup."
+  }
+}

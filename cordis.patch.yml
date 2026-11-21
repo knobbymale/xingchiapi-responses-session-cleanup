@@ -1,0 +1,3 @@
+- insert:
+    - id: xingchiapi-responses-cleanup
+      name: '@local/xingchiapi-responses-cleanup'
