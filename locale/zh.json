@@ -1,6 +1,6 @@
 {
   "meta": {
     "title": "xingchiapi Responses 会话清理",
-    "description": "启用后，仅在发往 xingchiapi OpenAI Responses 接口的最终 POST 请求中删除客户端带来的 session-id、x-session-id 请求头和 prompt_cache_key。保留 session_id、认证信息、上游地址、流式响应、工具字段及其他供应商行为。可在 DSH 插件列表中启用或禁用此插件。"
+    "description": "启用后，仅在发往 xingchiapi OpenAI Responses 接口的最终 POST 请求中删除所有会话标识头（session-id、x-session-id、session_id、x-client-request-id、x-session-affinity）和 prompt_cache_key，重置按会话标识累计的 100 次请求限制。默认在 95 个 user turn 时自动裁剪历史：保留首个任务轮和最近 93 轮，丢弃的轮次合并成摘要，压到 95 轮，尽量保留最多上下文；触发线、目标轮数、摘要条数等都可在插件配置中调整。保留认证信息、上游地址、流式响应和工具字段。历史裁剪是有损的。"
   }
 }

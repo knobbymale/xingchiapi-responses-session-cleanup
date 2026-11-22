@@ -1,6 +1,6 @@
 {
   "meta": {
     "title": "xingchiapi Responses session cleanup",
-    "description": "When enabled, removes client-provided session-id and x-session-id headers and prompt_cache_key from final POST requests to xingchiapi's OpenAI Responses endpoint. It preserves session_id, authentication, URLs, response streaming, tool fields, and all other providers. Toggle this plugin in DSH Plugins to enable or disable cleanup."
+    "description": "When enabled, removes every session-affinity header (session-id, x-session-id, session_id, x-client-request-id, x-session-affinity) and prompt_cache_key from final POST requests to xingchiapi's OpenAI Responses endpoint, resetting its 100-request per-session limit. By default, at 95 user turns it keeps the first task turn plus the most recent 93 turns, replaces older turns with a digest, and sends at most 95 turns to retain maximum context. Trigger, target, digest size, and other fields are configurable in the plugin form. Authentication, URLs, streaming, and tool fields are preserved; history trimming is lossy."
   }
 }
